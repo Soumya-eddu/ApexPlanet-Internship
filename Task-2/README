@@ -1,1 +1,51 @@
 
+# 🚀 ApexPlanet Dashboard
+
+A responsive, interactive dashboard built using **HTML**, **CSS (Flexbox & Grid)**, and **JavaScript** to enhance frontend development skills. This project includes a styled contact form with form validation and a dynamic to-do list that demonstrates DOM manipulation.
+
+---
+
+## 📌 Objectives
+
+- Enhance proficiency in **HTML** and **CSS**
+- Build a responsive layout using **Flexbox** and **CSS Grid**
+- Learn **JavaScript** for DOM interaction and form validation
+- Create a clean, user-friendly interface with real-time feedback
+
+---
+
+## ✨ Features
+
+### 📬 Contact Form
+- Name, email, and message input fields
+- Real-time form validation using JavaScript
+- Error messages for required fields and incorrect input
+- Styled with modern CSS
+
+### 📝 To-Do List
+- Add and remove tasks dynamically
+- Uses JavaScript to manipulate the DOM
+- Minimalist UI with instant feedback
+
+### 💡 Responsive Layout
+- Built with CSS Grid for desktop layout
+- Uses Flexbox for flexible content alignment
+- Fully responsive design with media queries
+
+---
+
+## 🛠️ Technologies Used
+
+- **HTML5** – Semantic and accessible structure
+- **CSS3** – Flexbox, CSS Grid, media queries
+- **JavaScript** – DOM manipulation and form validation
+- **Google Fonts** – Custom font styling (Outfit)
+
+---
+
+## 🧪 How to Run Locally
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/apexplanet-dashboard.git
+   cd apexplanet-dashboard
