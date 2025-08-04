@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ApexPlanet Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="dashboard-header">
+    <h1>🚀 ApexPlanet Dashboard</h1>
+    
+  </header>
+
+  <main class="dashboard">
+    <!-- Left Panel - Contact Form -->
+    <section class="contact-panel">
+      <h2>📬 Contact Info</h2>
+      <form id="contactForm">
+        <label>Name</label>
+        <input type="text" id="name" />
+        <div class="error" id="nameError"></div>
+
+        <label>Email</label>
+        <input type="email" id="email" />
+        <div class="error" id="emailError"></div>
+
+        <label>Message</label>
+        <textarea id="message"></textarea>
+        <div class="error" id="messageError"></div>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- Right Panel - To-Do List -->
+    <section class="todo-panel">
+      <h2>📝 To-Do List</h2>
+      <div class="todo-input">
+        <input type="text" id="taskInput" placeholder="Add a task..." />
+        <button onclick="addTask()">➕</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    🌐 ApexPlanet &copy; 2025 | Learn, Build & Launch!
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
