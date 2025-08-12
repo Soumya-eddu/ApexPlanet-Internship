@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ApexPlanet - Learn & Explore</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🌐 ApexPlanet - Learn & Explore 🌟</h1>
+  </header>
+
+  <div class="container">
+    
+    <!-- Quiz App -->
+    <section>
+      <h2>🧠 Take the Quiz!</h2>
+      <div id="quiz">
+        <div class="quiz-question" id="question"></div>
+        <div class="quiz-options" id="options"></div>
+        <div class="result" id="result"></div>
+      </div>
+      <button onclick="nextQuestion()">Next Question</button>
+    </section>
+
+    <!-- API Fetch Section -->
+    <section>
+      <h2>😂 Random Joke Generator</h2>
+      <p id="joke">Click the button to get a joke!</p>
+      <button onclick="getJoke()">Get Joke</button>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
