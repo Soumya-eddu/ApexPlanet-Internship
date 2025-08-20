@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fceabb, #74d4ef);
+      margin: 0;
+    }
+
+    .todo-box {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+      position: relative;
+    }
+
+    nav {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f8b500;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      width: 65%;
+      font-size: 1rem;
+      border: 2px solid #f8b500;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 12px 16px;
+      font-size: 1rem;
+      background-color: #f8b500;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #e69a00;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      color: #856404;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    li:hover {
+      transform: scale(1.02);
+    }
+
+    .remove-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-box">
+    <!-- Home Navigation -->
+    <nav>
+      <a href="index.html">🏠 Home</a>
+    </nav>
+
+    <h2>📝 To-Do List</h2>
+    <input id="taskInput" type="text" placeholder="Enter a task..." />
+    <button onclick="addTask()">Add</button>
+
+    <label>Tasks:</label>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    window.onload = function () {
+      displayTasks();
+    };
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const task = input.value.trim();
+      if (task === "") return;
+
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+
+      input.value = "";
+      displayTasks();
+    }
+
+    function displayTasks() {
+      const list = document.getElementById("taskList");
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+      list.innerHTML = "";
+
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.textContent = task;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.className = "remove-btn";
+        removeBtn.onclick = function () {
+          removeTask(index);
+        };
+
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+      });
+    }
+
+    function removeTask(index) {
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      displayTasks();
+    }
+  </script>
+</body>
+</html>
